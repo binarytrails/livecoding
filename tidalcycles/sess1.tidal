@@ -1,0 +1,16 @@
+
+d1 $ sound "metal/2"
+
+d1 $ silence
+
+d3 $ sound "bass1*4"
+
+d3 $ sound "<bass1 bass1> bass1 bass1"
+
+d3 $ every 3 rev (sound "[bass1 bass1]*2, bass1 bass1")
+
+d3 $ silence
+
+d4 $ slow 100 $ sound "noise*50"
+
+hush
