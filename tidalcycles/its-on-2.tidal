@@ -1,0 +1,12 @@
+
+d1 $ slow 2 $ s "bass4(3,8)" # n "0 1"
+
+d2 $ stack [
+    s "bass1(5,8)",
+    s "db(3,8)",
+    -- s "glitch(3,8)",
+    every 4 rev (s "glitch(3,8)")
+    -- s "voodoo(5,8)"
+]
+
+hush
