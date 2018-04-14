@@ -1,4 +1,5 @@
 // @author Vsevolod Ivanov
+// https://vimeo.com/sevaivanov/somatic
 
 #ifdef GL_ES
 precision mediump float;
@@ -23,9 +24,10 @@ void main (void)
     float d_min = 0.6;
     px *= 1000000000.;
 
-    for (int x=-1; x<1; x++)
+    // Worley noise
+    for (int x=-1; x<=1; x++)
     {
-        for (int y=-1; y<1; y++)
+        for (int y=-1; y<=1; y++)
         {
             vec2 p = rand(vec2(x,y) + floor(px));
             p = 0.5 + abs(sin(u_time*p))* 0.6;
