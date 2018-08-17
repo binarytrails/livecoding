@@ -1,18 +1,17 @@
 // @author Vsevolod Ivanov
 // https://vimeo.com/sevaivanov/somatic
 
-#ifdef GL_ES
-precision mediump float;
-#endif
-
 uniform float u_time;
 uniform vec2 u_resolution;
 uniform vec2 u_mouse;
 
-vec2 rand(vec2 v) // deterministic/pseudo random
+vec2 rand(vec2 v)
 {
-    return fract(sin(vec2(dot(v, vec2(151.9803, 78.233)),
-                          dot(v, vec2(645.3453, 54.785)))) * 43758.5453);
+    vec2 dot_p = vec2(
+        dot(v, vec2(151.9803, 78.233)),
+        dot(v, vec2(645.3453, 54.785))
+    );
+    return fract(sin(dot_p) * 43758.5453);
 }
 
 void main (void)
@@ -24,7 +23,7 @@ void main (void)
     float d_min = 0.6;
     px *= 1000000000.;
 
-    // Worley noise
+    // worley noise
     for (int x=-1; x<=1; x++)
     {
         for (int y=-1; y<=1; y++)
